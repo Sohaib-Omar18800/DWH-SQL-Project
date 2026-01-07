@@ -1,12 +1,13 @@
 /*
-*****************************************************************************
+*******************************************
 DDL Script: Create Bronze Tables
-*****************************************************************************
+*******************************************
 Script Purpose:
 	This script creates tables in the 'bronze' schema, dropping existing tables
 	if there any exist.
   Run this script to re-define the DDL structure of 'bronze' Tables
-******************************************************************************
+
+********************************************
 */
 
 IF OBJECT_ID('bronze.crm_cust_info','U') IS NOT NULL
@@ -31,7 +32,7 @@ CREATE TABLE bronze.crm_prd_info(
 prd_id INT,
 prd_key NVARCHAR(50),
 prd_nm NVARCHAR(50),
-prd_cost DECIMAL,
+prd_cost DECIMAL(18,2),
 prd_line NVARCHAR(10),
 prd_start_dt DATE,
 prd_end_dt DATE);
@@ -48,9 +49,9 @@ sls_cust_id INT,
 sls_order_dt INT,
 sls_ship_dt INT,
 sls_due_dt INT,
-sls_sales DECIMAL,
+sls_sales DECIMAL(18,2),
 sls_quantity INT,
-sls_price DECIMAL);
+sls_price DECIMAL(18,2));
 GO
 
 IF OBJECT_ID('bronze.erp_cust_az12','U') IS NOT NULL
@@ -58,9 +59,9 @@ IF OBJECT_ID('bronze.erp_cust_az12','U') IS NOT NULL
 GO
 
 CREATE TABLE bronze.erp_cust_az12(
-CID NVARCHAR(50),
-BDATE DATE,
-GEN NVARCHAR(10));
+cid NVARCHAR(50),
+bdate DATE,
+gen NVARCHAR(10));
 GO
 
 IF OBJECT_ID('bronze.erp_loc_a101','U') IS NOT NULL
@@ -68,8 +69,8 @@ IF OBJECT_ID('bronze.erp_loc_a101','U') IS NOT NULL
 GO
 
 CREATE TABLE bronze.erp_loc_a101(
-CID NVARCHAR(50),
-CNTRY NVARCHAR(50)
+cid NVARCHAR(50),
+cntry NVARCHAR(50)
 );
 GO
 
@@ -78,8 +79,8 @@ IF OBJECT_ID('bronze.erp_px_cat_g1v2','U') IS NOT NULL
 GO
 
 CREATE TABLE bronze.erp_px_cat_g1v2(
-ID NVARCHAR(50),
-CAT NVARCHAR(50),
-SUBCAT NVARCHAR(50),
-MAINTENANCE NVARCHAR(10)
+id NVARCHAR(50),
+cat NVARCHAR(50),
+subcat NVARCHAR(50),
+maintenance NVARCHAR(10)
 )
