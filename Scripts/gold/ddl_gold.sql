@@ -14,6 +14,7 @@ USAGE:
     3. Analytics: Join fact_sales to dimensions using the Surrogate Keys (_sk) 
        rather than Business Keys for optimal performance.
 ===============================================================================
+*/
 /*
 ===============================================================================
                           dim_customers VIEW
@@ -51,10 +52,6 @@ on ci.cst_key = cl.cid
                           dim_product VIEW
 ===============================================================================
 */
--- DROPING gold.dim_customers VIEW
-IF OBJECT('gold.dim_product','V') IS NOT NULL
-  DROP VIEW gold.dim_product;
-GO
 -- CREATEING gold.dim_product VIEW
 CREATE VIEW gold.dim_product AS (
 SELECT
