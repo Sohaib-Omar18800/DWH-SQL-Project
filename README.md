@@ -59,7 +59,9 @@ Modeling: Implemented a Star Schema with a central Fact table and supporting Dim
 
 Optimization: Used Surrogate Keys (_sk) for efficient joins and performance.
 
-✨ Developed by **Sohaib Omar**
+## ✨ Developed by 
+**Sohaib Omar**
+
 Feel free to reach out for collaborations or questions!
 
 **_LinkedIn_**:
